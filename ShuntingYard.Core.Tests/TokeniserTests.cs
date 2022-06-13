@@ -8,7 +8,7 @@ public class TokeniserTests
     {
         var actual = Tokeniser.Tokenise(input);
         
-        actual.Should().BeEquivalentTo(expected);
+        actual.Should().ContainInOrder(expected);
     }
 
     private static IEnumerable<object[]> TestData()
