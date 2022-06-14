@@ -1,6 +1,6 @@
-namespace ShuntingYard.Core.Tokens;
+namespace ShuntingYard.Core.Internal.Tokens;
 
-public class Operand : Token
+internal class Operand : Token
 {
     public Operand(string value) => Value = value;
 

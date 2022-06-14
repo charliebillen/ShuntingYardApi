@@ -1,8 +1,8 @@
-using ShuntingYard.Core.Tokens;
+using ShuntingYard.Core.Internal.Tokens;
 
-namespace ShuntingYard.Core;
+namespace ShuntingYard.Core.Internal;
 
-public static class Tokeniser
+internal static class Tokeniser
 {
     public static IEnumerable<Token> Tokenise(string input)
     {

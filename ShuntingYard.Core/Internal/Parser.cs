@@ -1,8 +1,8 @@
-using ShuntingYard.Core.Tokens;
+using ShuntingYard.Core.Internal.Tokens;
 
-namespace ShuntingYard.Core;
+namespace ShuntingYard.Core.Internal;
 
-public static class Parser
+internal static class Parser
 {
     public static IEnumerable<Token> Parse(IEnumerable<Token> input)
     {

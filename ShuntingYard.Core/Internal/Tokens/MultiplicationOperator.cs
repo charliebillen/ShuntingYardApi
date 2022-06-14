@@ -1,6 +1,6 @@
-namespace ShuntingYard.Core.Tokens;
+namespace ShuntingYard.Core.Internal.Tokens;
 
-public class MultiplicationOperator : Operator
+internal class MultiplicationOperator : Operator
 {
     public MultiplicationOperator(string value)
     {

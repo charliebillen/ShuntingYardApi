@@ -1,6 +1,6 @@
-namespace ShuntingYard.Core.Tokens;
+namespace ShuntingYard.Core.Internal.Tokens;
 
-public class DivisionOperator : Operator
+internal class DivisionOperator : Operator
 {
     public DivisionOperator(string value)
     {

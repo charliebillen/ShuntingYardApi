@@ -1,8 +1,8 @@
-using ShuntingYard.Core.Tokens;
+using ShuntingYard.Core.Internal.Tokens;
 
-namespace ShuntingYard.Core;
+namespace ShuntingYard.Core.Internal;
 
-public static class TokenFactory
+internal static class TokenFactory
 {
     public static Token TokenFrom(string input) =>
         input switch

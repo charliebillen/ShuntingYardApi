@@ -10,7 +10,7 @@ public class ShuntingYardCalculatorTests
     [InlineData("(1+2)*(3+4)", 21)]
     public void Solve_GivenPostfixCalculation_ReturnsTheResult(string calculation, decimal expected)
     {
-        var calculator = new ShuntingYardCalculator();
+        var calculator = new ShuntingYardShuntingYardCalculator();
 
         var actual = calculator.Solve(calculation);
 

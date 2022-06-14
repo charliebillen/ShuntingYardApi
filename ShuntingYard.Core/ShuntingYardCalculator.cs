@@ -1,6 +1,8 @@
+using ShuntingYard.Core.Internal;
+
 namespace ShuntingYard.Core;
 
-public class ShuntingYardCalculator : ICalculator
+public class ShuntingYardShuntingYardCalculator : IShuntingYardCalculator
 {
     public decimal Solve(string calculation)
     {
@@ -10,7 +12,7 @@ public class ShuntingYardCalculator : ICalculator
     }
 }
 
-public interface ICalculator
+public interface IShuntingYardCalculator
 {
     decimal Solve(string calculation);
 }

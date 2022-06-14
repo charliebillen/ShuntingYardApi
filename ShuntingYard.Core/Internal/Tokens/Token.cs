@@ -1,6 +1,6 @@
-namespace ShuntingYard.Core.Tokens;
+namespace ShuntingYard.Core.Internal.Tokens;
 
-public abstract class Token : IEquatable<Token>
+internal abstract class Token : IEquatable<Token>
 {
     public string Value { get; protected init; } = string.Empty;
     public int Precedence { get; protected init; }

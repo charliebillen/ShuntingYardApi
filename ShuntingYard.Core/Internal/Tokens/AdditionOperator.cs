@@ -1,6 +1,6 @@
-namespace ShuntingYard.Core.Tokens;
+namespace ShuntingYard.Core.Internal.Tokens;
 
-public class AdditionOperator : Operator
+internal class AdditionOperator : Operator
 {
     public AdditionOperator(string value)
     {

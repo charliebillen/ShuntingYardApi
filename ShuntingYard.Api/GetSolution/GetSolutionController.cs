@@ -7,10 +7,10 @@ namespace ShuntingYard.Api.GetSolution;
 [Route("solutions/{calculation}")]
 public class GetSolutionController : ControllerBase
 {
-    private readonly ICalculator _calculator;
+    private readonly IShuntingYardCalculator _calculator;
     private readonly ILogger<GetSolutionController> _logger;
 
-    public GetSolutionController(ICalculator calculator, ILogger<GetSolutionController> logger)
+    public GetSolutionController(IShuntingYardCalculator calculator, ILogger<GetSolutionController> logger)
     {
         _calculator = calculator;
         _logger = logger;

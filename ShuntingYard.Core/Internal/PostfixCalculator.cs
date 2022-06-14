@@ -1,8 +1,8 @@
-using ShuntingYard.Core.Tokens;
+using ShuntingYard.Core.Internal.Tokens;
 
-namespace ShuntingYard.Core;
+namespace ShuntingYard.Core.Internal;
 
-public static class PostfixCalculator
+internal static class PostfixCalculator
 {
     public static decimal Solve(IEnumerable<Token> calculation)
     {
