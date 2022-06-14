@@ -10,6 +10,7 @@ public class ShuntingYardCalculatorTests
     [InlineData("1*2/3", 0.667)]
     [InlineData("(1+2)*3", 9)]
     [InlineData("(1+2)*(3+4)", 21)]
+    [InlineData("(10*(1+3)+4)/2", 22)]
     [InlineData("100+200", 300)]
     public void Solve_GivenCalculationString_ReturnsTheResult(string calculation, decimal expected)
     {

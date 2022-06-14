@@ -11,13 +11,22 @@ public class GetSolutionTests
         _client = application.CreateClient();
     }
 
-    [Fact]
-    public async Task Get_ReturnsOkResponseWithSolution()
+    [Theory]
+    [InlineData("0", 0)]
+    [InlineData("1+2", 3)]
+    [InlineData("1-2", -1)]
+    [InlineData("1+2*3", 7)]
+    [InlineData("1*2/3", 0.667)]
+    [InlineData("(1+2)*3", 9)]
+    [InlineData("(1+2)*(3+4)", 21)]
+    [InlineData("(10*(1+3)+4)/2", 22)]
+    [InlineData("100+200", 300)]
+    public async Task Get_ReturnsOkResponseWithSolution(string calculation, decimal expected)
     {
-        var response = await _client.GetAsync("solutions/(1+2)*(3+4)");
+        var response = await _client.GetAsync($"solutions/{calculation}");
         response.StatusCode.Should().Be(HttpStatusCode.OK);
 
         var solution = await response.Content.ReadAsStringAsync();
-        decimal.Parse(solution).Should().Be(21);
+        decimal.Parse(solution).Should().BeApproximately(expected, 3);
     }
 }
