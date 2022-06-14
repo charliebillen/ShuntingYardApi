@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShuntingYard.Core", "Shunti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShuntingYard.Core.Tests", "ShuntingYard.Core.Tests\ShuntingYard.Core.Tests.csproj", "{539A431F-7C2D-4A8F-899F-1ADED1816953}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShuntingYard.Api", "ShuntingYard.Api\ShuntingYard.Api.csproj", "{49FEC644-F474-458A-A3AE-8CF5BE334A05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShuntingYard.Api.Tests", "ShuntingYard.Api.Tests\ShuntingYard.Api.Tests.csproj", "{968FD477-550D-4631-9ABE-7E0B84ED0C14}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{539A431F-7C2D-4A8F-899F-1ADED1816953}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{539A431F-7C2D-4A8F-899F-1ADED1816953}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{539A431F-7C2D-4A8F-899F-1ADED1816953}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49FEC644-F474-458A-A3AE-8CF5BE334A05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49FEC644-F474-458A-A3AE-8CF5BE334A05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49FEC644-F474-458A-A3AE-8CF5BE334A05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49FEC644-F474-458A-A3AE-8CF5BE334A05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{968FD477-550D-4631-9ABE-7E0B84ED0C14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{968FD477-550D-4631-9ABE-7E0B84ED0C14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{968FD477-550D-4631-9ABE-7E0B84ED0C14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{968FD477-550D-4631-9ABE-7E0B84ED0C14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
