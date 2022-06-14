@@ -1,8 +1,10 @@
+using ShuntingYard.Core.Tokens;
+
 namespace ShuntingYard.Core;
 
 public static class Tokeniser
 {
-    public static IEnumerable<string> Tokenise(string input)
+    public static IEnumerable<Token> Tokenise(string input)
     {
         var i = 0;
         while (i < input.Length)
@@ -14,12 +16,12 @@ public static class Tokeniser
                 {
                     a++;
                 }
-                yield return input.Substring(i, a - i);
+                yield return Token.From(input.Substring(i, a - i));
                 i = a;
             }
             else
             {
-                yield return input[i].ToString();
+                yield return Token.From(input[i].ToString());
                 i++;
             }
         }

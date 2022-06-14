@@ -1,37 +1,40 @@
+using ShuntingYard.Core.Tokens;
+
 namespace ShuntingYard.Core;
 
 public static class Parser
 {
-    public static IEnumerable<string> Parse(IEnumerable<string> input)
+    public static IEnumerable<Token> Parse(IEnumerable<Token> input)
     {
-        var stack = new Stack<string>();
+        var stack = new Stack<Token>();
 
         foreach (var token in input)
         {
-            if (IsOperator(token))
+            switch (token)
             {
-                while (stack.Any() && Precedence(token) <= Precedence(stack.Peek()))
-                {
-                    yield return stack.Pop();
-                }
-                stack.Push(token);
-            }
-            else if (token == "(")
-            {
-                stack.Push(token);
-            }
-            else if (token == ")")
-            {
-                while (stack.Peek() != "(")
-                {
-                    yield return stack.Pop();
-                }
+                case Operator:
+                    while (stack.Any() && token <= stack.Peek())
+                    {
+                        yield return stack.Pop();
+                    }
+                    stack.Push(token);
+                    break;
 
-                stack.Pop();
-            }
-            else
-            {
-                yield return token;
+                case LeftParen:
+                    stack.Push(token);
+                    break;
+
+                case RightParen:
+                    while (stack.Peek() is not LeftParen)
+                    {
+                        yield return stack.Pop();
+                    }
+                    stack.Pop();
+                    break;
+
+                default:
+                    yield return token;
+                    break;
             }
         }
 
@@ -40,16 +43,4 @@ public static class Parser
             yield return op;
         }
     }
-
-    private static bool IsOperator(string token) => Precedence(token) > 0;
-
-    private static int Precedence(string op) =>
-        op switch
-        {
-            "*" => 4,
-            "/" => 4,
-            "+" => 2,
-            "-" => 2,
-            _ => 0
-        };
 }
