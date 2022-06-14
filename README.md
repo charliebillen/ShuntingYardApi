@@ -2,7 +2,7 @@
 
 # Shunting Yard API
 
-An ASP.net 6 API that accepts a calculation as a string and uses the Shunting Yard algorithm to calculate and return the result.
+An ASP.net 6 API that accepts a calculation as a string and uses the Shunting Yard algorithm to calculate and return the solution.
 
 ## Example
 ```
