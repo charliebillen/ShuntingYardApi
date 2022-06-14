@@ -1,5 +1,3 @@
-using ShuntingYard.Core.Tokens;
-
 namespace ShuntingYard.Core.Tests;
 
 public class TokeniserTests
@@ -10,7 +8,7 @@ public class TokeniserTests
     {
         var actual = Tokeniser.Tokenise(input);
         
-        actual.Should().ContainInOrder(expected.Select(Token.From));
+        actual.Should().ContainInOrder(expected.Select(TokenFactory.TokenFrom));
     }
 
     private static IEnumerable<object[]> TestData()

@@ -16,12 +16,12 @@ public static class Tokeniser
                 {
                     a++;
                 }
-                yield return Token.From(input.Substring(i, a - i));
+                yield return TokenFactory.TokenFrom(input.Substring(i, a - i));
                 i = a;
             }
             else
             {
-                yield return Token.From(input[i].ToString());
+                yield return TokenFactory.TokenFrom(input[i].ToString());
                 i++;
             }
         }

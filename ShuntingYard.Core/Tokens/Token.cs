@@ -5,18 +5,6 @@ public abstract class Token : IEquatable<Token>
     public string Value { get; protected init; } = string.Empty;
     public int Precedence { get; protected init; }
 
-    public static Token From(string input) =>
-        input switch
-        {
-            "*" => new MultiplicationOperator(input),
-            "/" => new DivisionOperator(input),
-            "+" => new AdditionOperator(input),
-            "-" => new SubtractionOperator(input),
-            ")" => new RightParen(input),
-            "(" => new LeftParen(input),
-            _ => new Operand(input)
-        };
-
     public static bool operator <=(Token left, Token right)
         => left.Precedence <= right.Precedence;
 

@@ -9,5 +9,5 @@ public class MultiplicationOperator : Operator
     }
 
     public override Operand Apply(Operand left, Operand right) 
-        => new($"{left.ToInt() * right.ToInt()}");
+        => new($"{left.ToDecimal() * right.ToDecimal()}");
 }

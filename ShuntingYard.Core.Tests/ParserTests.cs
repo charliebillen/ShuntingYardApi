@@ -1,5 +1,3 @@
-using ShuntingYard.Core.Tokens;
-
 namespace ShuntingYard.Core.Tests;
 
 public class ParserTests
@@ -8,9 +6,9 @@ public class ParserTests
     [MemberData(nameof(TestData))]
     public void Parse_ConvertsInfixToPostfix(string[] input, string[] expected)
     {
-        var actual = Parser.Parse(input.Select(Token.From));
+        var actual = Parser.Parse(input.Select(TokenFactory.TokenFrom));
 
-        actual.Should().ContainInOrder(expected.Select(Token.From));
+        actual.Should().ContainInOrder(expected.Select(TokenFactory.TokenFrom));
     }
 
     private static IEnumerable<object[]> TestData()
