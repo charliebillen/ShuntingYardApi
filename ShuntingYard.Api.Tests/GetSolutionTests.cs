@@ -23,7 +23,9 @@ public class GetSolutionTests
     [InlineData("100+200", 300)]
     public async Task Get_ReturnsOkResponseWithSolution(string calculation, decimal expected)
     {
-        var response = await _client.GetAsync($"solutions/{calculation}");
+        var encodedCalculation = Uri.EscapeDataString(calculation);
+
+        var response = await _client.GetAsync($"solutions/{encodedCalculation}");
         response.StatusCode.Should().Be(HttpStatusCode.OK);
 
         var solution = await response.Content.ReadAsStringAsync();

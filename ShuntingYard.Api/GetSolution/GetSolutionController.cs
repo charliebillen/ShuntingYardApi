@@ -21,9 +21,11 @@ public class GetSolutionController : ControllerBase
     [Route("solutions/{*calculation}")]
     public ActionResult<decimal> Get([FromRoute] string calculation)
     {
-        _logger.LogInformation("Calculating solution for {Calculation}", calculation);
+        var decodedCalculation = Uri.UnescapeDataString(calculation);
+        
+        _logger.LogInformation("Calculating solution for {Calculation}", decodedCalculation);
 
-        var solution = _calculator.Solve(calculation);
+        var solution = _calculator.Solve(decodedCalculation);
 
         return new OkObjectResult(solution);
     }
