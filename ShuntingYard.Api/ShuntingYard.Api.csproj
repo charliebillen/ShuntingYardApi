@@ -13,4 +13,8 @@
     <ItemGroup>
         <InternalsVisibleTo Include="ShuntingYard.Api.Tests" />
     </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ShuntingYard.Core\ShuntingYard.Core.csproj" />
+    </ItemGroup>
 </Project>

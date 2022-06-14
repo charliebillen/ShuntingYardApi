@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using ShuntingYard.Core;
 
 namespace ShuntingYard.Api.GetSolution;
 
@@ -6,10 +7,23 @@ namespace ShuntingYard.Api.GetSolution;
 [Route("solutions/{calculation}")]
 public class GetSolutionController : ControllerBase
 {
+    private readonly ICalculator _calculator;
+    private readonly ILogger<GetSolutionController> _logger;
+
+    public GetSolutionController(ICalculator calculator, ILogger<GetSolutionController> logger)
+    {
+        _calculator = calculator;
+        _logger = logger;
+    }
+
     [HttpGet]
     public ActionResult<decimal> Get([FromRoute] string calculation)
     {
-        return new OkObjectResult(999m);
+        _logger.LogInformation("Calculating solution for {calculation}", calculation);
+
+        var solution = _calculator.Solve(calculation);
+
+        return new OkObjectResult(solution);
     }
 }
 

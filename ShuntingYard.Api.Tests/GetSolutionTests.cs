@@ -12,10 +12,12 @@ public class GetSolutionTests
     }
 
     [Fact]
-    public async Task Get_ReturnsOkResponse()
+    public async Task Get_ReturnsOkResponseWithSolution()
     {
-        var response = await _client.GetAsync("solutions/1*2+3");
-
+        var response = await _client.GetAsync("solutions/(1+2)*(3+4)");
         response.StatusCode.Should().Be(HttpStatusCode.OK);
+
+        var solution = await response.Content.ReadAsStringAsync();
+        decimal.Parse(solution).Should().Be(21);
     }
 }
