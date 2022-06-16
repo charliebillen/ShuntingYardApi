@@ -21,6 +21,8 @@ public class GetSolutionTests
     [InlineData("(1+2)*(3+4)", 21)]
     [InlineData("(10*(1+3)+4)/2", 22)]
     [InlineData("100+200", 300)]
+    [InlineData("10*2.5", 25)]
+    [InlineData("3/1.5", 2)]
     public async Task Get_ReturnsOkResponseWithSolution(string calculation, decimal expected)
     {
         var encodedCalculation = Uri.EscapeDataString(calculation);

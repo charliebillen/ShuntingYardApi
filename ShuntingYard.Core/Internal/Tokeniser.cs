@@ -9,10 +9,10 @@ internal static class Tokeniser
         var i = 0;
         while (i < input.Length)
         {
-            if (char.IsDigit(input[i]))
+            if (IsDecimalCharacter(input[i]))
             {
                 var a = i + 1;
-                while (a < input.Length && char.IsDigit(input[a]))
+                while (a < input.Length && IsDecimalCharacter(input[a]))
                 {
                     a++;
                 }
@@ -26,4 +26,7 @@ internal static class Tokeniser
             }
         }
     }
+
+    private static bool IsDecimalCharacter(char c)
+        => char.IsDigit(c) || c == '.';
 }
