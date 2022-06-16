@@ -2,34 +2,34 @@ using ShuntingYard.Core.Internal.Tokens;
 
 namespace ShuntingYard.Core.Internal;
 
-internal static class Parser
+internal static class InfixParser
 {
     public static IEnumerable<Token> Parse(IEnumerable<Token> input)
     {
-        var stack = new Stack<Token>();
+        var operandsAndParens = new Stack<Token>();
 
         foreach (var token in input)
         {
             switch (token)
             {
                 case Operator:
-                    while (stack.Any() && token <= stack.Peek())
+                    while (operandsAndParens.Any() && token <= operandsAndParens.Peek())
                     {
-                        yield return stack.Pop();
+                        yield return operandsAndParens.Pop();
                     }
-                    stack.Push(token);
+                    operandsAndParens.Push(token);
                     break;
 
                 case LeftParen:
-                    stack.Push(token);
+                    operandsAndParens.Push(token);
                     break;
 
                 case RightParen:
-                    while (stack.Peek() is not LeftParen)
+                    while (operandsAndParens.Peek() is not LeftParen)
                     {
-                        yield return stack.Pop();
+                        yield return operandsAndParens.Pop();
                     }
-                    stack.Pop();
+                    operandsAndParens.Pop();
                     break;
 
                 default:
@@ -38,7 +38,7 @@ internal static class Parser
             }
         }
 
-        foreach (var op in stack)
+        foreach (var op in operandsAndParens)
         {
             yield return op;
         }

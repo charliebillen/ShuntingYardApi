@@ -12,7 +12,7 @@ public class ShuntingYardCalculator : IShuntingYardCalculator
         }
 
         var infixTokens = Tokeniser.Tokenise(calculation);
-        var postfixTokens = Parser.Parse(infixTokens);
+        var postfixTokens = InfixParser.Parse(infixTokens);
         return PostfixCalculator.Solve(postfixTokens);
     }
 }
