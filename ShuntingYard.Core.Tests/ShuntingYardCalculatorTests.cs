@@ -14,6 +14,7 @@ public class ShuntingYardCalculatorTests
     [InlineData("100+200", 300)]
     [InlineData("10*2.5", 25)]
     [InlineData("3/1.5", 2)]
+    [InlineData("(1+2.5)*(3+4)", 24.5)]
     public void Solve_GivenCalculationString_ReturnsTheResult(string calculation, decimal expected)
     {
         var calculator = new ShuntingYardCalculator();
