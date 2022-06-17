@@ -24,7 +24,10 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\ShuntingYard.Api\ShuntingYard.Api.csproj" />
+        <ProjectReference Include="..\ShuntingYard.Api\ShuntingYard.Api.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+        <AssemblyAttribute Include="System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute" />
+    </ItemGroup>
 </Project>
