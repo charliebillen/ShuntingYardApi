@@ -4,7 +4,6 @@ namespace ShuntingYard.Core.Internal.Tokens;
 
 internal abstract class Token
 {
-    protected string Value { get; init; } = string.Empty;
     protected int Precedence { get; init; }
 
     public static bool operator <=(Token left, Token right)

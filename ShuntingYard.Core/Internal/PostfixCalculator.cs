@@ -23,6 +23,6 @@ internal static class PostfixCalculator
             }
         }
 
-        return operands.Pop().ToDecimal();
+        return operands.Pop().Value;
     }
 }
