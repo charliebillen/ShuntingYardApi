@@ -11,17 +11,18 @@ internal static class Tokeniser
         {
             if (IsDecimalCharacter(input[i]))
             {
-                var a = i + 1;
-                while (a < input.Length && IsDecimalCharacter(input[a]))
+                // Look ahead to the end of the decimal value
+                var j = i + 1;
+                while (j < input.Length && IsDecimalCharacter(input[j]))
                 {
-                    a++;
+                    j++;
                 }
-                yield return TokenFactory.TokenFrom(input.Substring(i, a - i));
-                i = a;
+                yield return TokenFactory.TokenFrom(input.Substring(i, j - i));
+                i = j;
             }
             else
             {
-                yield return TokenFactory.TokenFrom(input[i].ToString());
+                yield return TokenFactory.TokenFrom(input[i]);
                 i++;
             }
         }

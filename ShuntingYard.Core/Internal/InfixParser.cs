@@ -6,30 +6,30 @@ internal static class InfixParser
 {
     public static IEnumerable<Token> Parse(IEnumerable<Token> input)
     {
-        var operandsAndParens = new Stack<Token>();
+        var operatorsOrParens = new Stack<Token>();
 
         foreach (var token in input)
         {
             switch (token)
             {
                 case Operator:
-                    while (operandsAndParens.Any() && token <= operandsAndParens.Peek())
+                    while (operatorsOrParens.Any() && token <= operatorsOrParens.Peek())
                     {
-                        yield return operandsAndParens.Pop();
+                        yield return operatorsOrParens.Pop();
                     }
-                    operandsAndParens.Push(token);
+                    operatorsOrParens.Push(token);
                     break;
 
                 case LeftParen:
-                    operandsAndParens.Push(token);
+                    operatorsOrParens.Push(token);
                     break;
 
                 case RightParen:
-                    while (operandsAndParens.Peek() is not LeftParen)
+                    while (operatorsOrParens.Peek() is not LeftParen)
                     {
-                        yield return operandsAndParens.Pop();
+                        yield return operatorsOrParens.Pop();
                     }
-                    operandsAndParens.Pop();
+                    operatorsOrParens.Pop();
                     break;
 
                 default:
@@ -38,7 +38,7 @@ internal static class InfixParser
             }
         }
 
-        foreach (var op in operandsAndParens)
+        foreach (var op in operatorsOrParens)
         {
             yield return op;
         }
