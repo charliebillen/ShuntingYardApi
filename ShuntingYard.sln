@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShuntingYard.Api", "Shuntin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShuntingYard.Api.Tests", "ShuntingYard.Api.Tests\ShuntingYard.Api.Tests.csproj", "{968FD477-550D-4631-9ABE-7E0B84ED0C14}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShuntingYardCalculator.Benchmarks", "ShuntingYardCalculator.Benchmarks\ShuntingYardCalculator.Benchmarks.csproj", "{B2413EF2-4213-464A-BE9A-691E8E2A30E9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{968FD477-550D-4631-9ABE-7E0B84ED0C14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{968FD477-550D-4631-9ABE-7E0B84ED0C14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{968FD477-550D-4631-9ABE-7E0B84ED0C14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2413EF2-4213-464A-BE9A-691E8E2A30E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2413EF2-4213-464A-BE9A-691E8E2A30E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2413EF2-4213-464A-BE9A-691E8E2A30E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2413EF2-4213-464A-BE9A-691E8E2A30E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
