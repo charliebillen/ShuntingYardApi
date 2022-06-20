@@ -9,7 +9,11 @@ internal static class Tokeniser
         var i = 0;
         while (i < input.Length)
         {
-            if (IsDecimalCharacter(input[i]))
+            if (char.IsWhiteSpace(input[i]))
+            {
+                i++;
+            }
+            else if (IsDecimalCharacter(input[i]))
             {
                 // Look ahead to the end of the decimal value
                 var j = i + 1;

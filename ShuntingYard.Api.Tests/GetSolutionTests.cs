@@ -14,6 +14,7 @@ public class GetSolutionTests
     [Theory]
     [InlineData("0", 0)]
     [InlineData("1+2", 3)]
+    [InlineData("   1 + 2\n", 3)]
     [InlineData("1-2", -1)]
     [InlineData("1+2*3", 7)]
     [InlineData("1*2/3", 0.667)]
